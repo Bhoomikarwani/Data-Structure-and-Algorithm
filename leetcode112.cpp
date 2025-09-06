@@ -41,7 +41,7 @@ bool hasPathSum(Node* root, int targetSum) {
         return hasPathSum(root->left, targetSum) || hasPathSum(root->right, targetSum);
 }
 int main(){
-    vector<int> preorder = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+    vector<int> preorder = {5,4,11,7,-1,-1,2,-1,-1,-1,8,13,-1,-1,4,-1,1};
     Node* root = buildTree(preorder);
-    hasPathSum(root , 22);
+    cout << hasPathSum(root , 22);
 }
