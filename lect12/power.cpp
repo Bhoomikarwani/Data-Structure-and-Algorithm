@@ -30,6 +30,6 @@ double myPow(double x, int n){
 
 int main(){
     double x=3.0;
-    int n=5; //in binary form
+    int n=5; 
     cout<< myPow(x,n);
 }
