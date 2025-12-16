@@ -27,10 +27,11 @@ using namespace std;
 
 //moore's alogorithum
 int majority(vector<int> &nums){
-    int n=sizeof(nums)/sizeof(int);
+   // int n=sizeof(nums)/sizeof(int);
+   int n=nums.size();
     int freq=0, ans=0;
     for(int i=0;i<n; i++){
-        if(freq==0){
+        if(freq==0){           //first check mai freq 0 hogi
             ans=nums[i];
         }
         if(ans==nums[i]){
