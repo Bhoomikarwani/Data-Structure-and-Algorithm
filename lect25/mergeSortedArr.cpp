@@ -46,6 +46,7 @@ void merge(vector<int>& A, int m , vector<int>& B, int n){
             j--;
     }
 }
+
 int main(){
     vector<int> A={1,2,3,0,0,0}; // size should be equal to m+n
     int m=3; //sorted elements in A
