@@ -57,7 +57,29 @@ int main(){
     // cout<<vec.empty()<<endl; //checks vec is epmty or not
 
     //iterators  - vec.begin ,vec.end => it reurns index number
-    vector<int> vec={1,2,3,4,5};
-    cout << *(vec.begin()) ;
-    cout << *(vec.end());  //end pointing to just to place just after the place  last index
+    // vector<int> vec={1,2,3,4,5};
+    // cout << *(vec.begin())<<endl ;
+    // cout << *(vec.end())<< endl;  //end pointing to just to place just after the place  last index
+    // cout << *(vec.end()-1)<< endl;
+
+    
+    //iterator (by this we can easy access the memory locations)
+    vector<int> vec = {1, 2, 3, 4,5};
+   // vector<int>::iterator it; // it is same as (i in for loop-initializer) but it stores adderss/index
+    // for (it = vec.begin(); it != vec.end(); it++)
+    // {
+    //     cout << *(it) << " ";
+    // }
+    // cout << endl;
+
+    //we csn write this ( vector<int>::iterator it ) or (auto)  
+
+
+    //reverse loop
+    for (auto it = vec.rbegin(); it != vec.rend(); it++)
+    {
+        cout << *(it) << " ";
+    }
+    cout << endl;
+    return 0;
 }
