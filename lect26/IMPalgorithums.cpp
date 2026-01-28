@@ -33,12 +33,15 @@ int main(){
 //     }
 //     return 0;
 
-vector<int> vec = {1,2,3,4,5};
- reverse(vec.begin(), vec.end());
- for(auto val : vec){
-    cout << val << " ";
- }
- cout<< endl;
+// vector<int> vec = {1,2,3,4,5};
+//  reverse(vec.begin(), vec.end());
+//  for(auto val : vec){
+//     cout << val << " ";
+//  }
+//  cout<< endl;
+
+vector<int> vec={1,2,3,0,5};
+cout<< *(min_element(vec.begin(),vec.end()))<< endl;
 }
 
 
