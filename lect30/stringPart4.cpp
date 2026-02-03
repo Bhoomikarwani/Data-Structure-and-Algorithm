@@ -23,7 +23,7 @@ string reverseWords(string s) {
         return ans.substr(1);
     }
 int main(){
-    string s="a good   example";
+    string s="hello  world ";
     cout << reverseWords(s);
     return 0;
 }
