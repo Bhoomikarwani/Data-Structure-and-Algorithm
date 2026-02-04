@@ -2,19 +2,19 @@
 using namespace std;
 int main(){
 
-//    ABCD
-//    ABCD
-//    ABCD
-//    ABCD
-//  int n=4;
-//     for(int i=0; i<n; i++){
-//          char ch='A'; //automatically 65 store karta h
-//         for(int j=0; j<n ;j++){
-//             cout<<ch<<" ";
-//             ch+=1;
-//         }
-//         cout<<endl;
-//     }
+  //  ABCD
+  //  ABCD
+  //  ABCD
+  //  ABCD
+ int n=4;
+    for(int i=0; i<n; i++){
+         char ch='A'; //automatically 65 store karta h
+        for(int j=0; j<n ;j++){
+            cout<<ch<<" ";
+            ch+=1;
+        }
+        cout<<endl;
+    }
 
 
 //123
@@ -85,7 +85,7 @@ int main(){
 // 2 3
 // 4 5 6
 // 7 8 9 10
-int n=4;
+ n=4;
 int k=1;
 for(int i=0; i<n; i++){
   for(int j=0; j<=i; j++){
