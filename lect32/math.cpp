@@ -3,14 +3,14 @@
 #include <string>
 using namespace std;
 //to one number
-string isPrime(int n){
-    for(int i=2; i*i <= n ; i++){
-        if(n % i==0){
-            return "not prime";
-        }
-    }
-    return "prime";
-}
+// string isPrime(int n){
+//     for(int i=2; i*i <= n ; i++){
+//         if(n % i==0){
+//             return "not prime";
+//         }
+//     }
+//     return "prime";
+// }
 
 //to check for range of numbers(brute force approach)
 // string isPrimeRange(int N)
@@ -36,28 +36,48 @@ string isPrime(int n){
 
 //to check for range of numbers(optimize approach)
 //sieve of Eratosthenes
-int PrimeInRange(int N){
+//int PrimeInRange(int N){
 
-     vector<bool> prime(N+1,true);
-     int count =0;
+//      vector<bool> prime(N+1,true);
+//      int count =0;
 
-     for(int i=2 ; i<N ; i++){
-         if(prime[i]==true){
-            count++;
-            for(int j=i*2 ; j<N ; j=j+i){
-                prime[j]=false;
-            }
-         } 
-     }
-     return count;
+//      for(int i=2 ; i<N ; i++){
+//          if(prime[i]==true){
+//             count++;
+//             for(int j=i*2 ; j<N ; j=j+i){
+//                 prime[j]=false;
+//             }
+//          } 
+//      }
+//      return count;
+// }
+
+
+void printDigits(int n){
+    int count = 0;
+    int sum = 0;
+    while(n != 0)
+    {
+        int digit = n % 10 ;
+        cout << digit << endl ;
+        n = n / 10 ;
+        
+        count++ ;
+
+        sum += digit;
+    }
+    cout << count << endl ;
+    cout << sum << endl ;
 }
-
 int main(){
     // int n=47;
     // cout<< isPrime(n)<< endl;
 
     //cout << isPrimeRange(50) <<endl;
 
-    cout << PrimeInRange(50) <<endl ; 
+    //cout << PrimeInRange(50) <<endl ; 
+
+    int n=3599;
+    printDigits(n);
     return 0;
 }
