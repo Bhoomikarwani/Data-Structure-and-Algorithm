@@ -53,22 +53,41 @@ using namespace std;
 // }
 
 
-void printDigits(int n){
-    int count = 0;
-    int sum = 0;
-    while(n != 0)
-    {
-        int digit = n % 10 ;
-        cout << digit << endl ;
-        n = n / 10 ;
+// void printDigits(int n){
+//     int count = 0;
+//     int sum = 0;
+//     while(n != 0)
+//     {
+//         int digit = n % 10 ;
+//         cout << digit << endl ;
+//         n = n / 10 ;
         
-        count++ ;
+//         count++ ;
 
-        sum += digit;
-    }
-    cout << count << endl ;
-    cout << sum << endl ;
+//         sum += digit;
+//     }
+//     cout << count << endl ;
+//     cout << sum << endl ;
+// }
+
+// void countDigits(int n){
+//     cout<< (int)(log10(n)+1) << endl;
+// }
+
+bool isArmstrong(int n){  //153 = 1^3 + 5^3 + 3^3
+   int copyN = n ;
+   int sumOfCubes= 0 ;
+
+   while(n != 0){
+    int dig = n %10 ;
+    sumOfCubes+= (dig * dig *dig);
+
+    n = n / 10 ;
+   }
+
+   return sumOfCubes == copyN;
 }
+
 int main(){
     // int n=47;
     // cout<< isPrime(n)<< endl;
@@ -77,7 +96,16 @@ int main(){
 
     //cout << PrimeInRange(50) <<endl ; 
 
-    int n=3599;
-    printDigits(n);
+    //int n=3599;
+    //printDigits(n);
+    //countDigits(n);
+
+    int n=371;   // 153, 371 ,1
+    if(isArmstrong(n)){
+         cout<< "Armstrong" << endl;
+    }
+    else{
+        cout<< "NOT Armstrong" << endl;
+    }
     return 0;
 }
