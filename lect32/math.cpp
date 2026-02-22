@@ -88,6 +88,32 @@ bool isArmstrong(int n){  //153 = 1^3 + 5^3 + 3^3
    return sumOfCubes == copyN;
 }
 
+int GCD( int a , int b ){
+    int gcd=1;
+    if(a ==0 ){
+        gcd = b ;
+ 
+    }
+    else if(b ==0 ){
+        gcd = a ;
+    }
+    else if(a == b ){
+        gcd = b ;
+    }
+    else
+    {
+        for (int i = 2; i <= min(a, b); i++)
+        {
+            if (a % i == 0 && b % i == 0)
+            {
+                gcd = i;
+            }
+        }
+    }
+
+    return gcd;
+}
+
 int main(){
     // int n=47;
     // cout<< isPrime(n)<< endl;
@@ -100,12 +126,15 @@ int main(){
     //printDigits(n);
     //countDigits(n);
 
-    int n=371;   // 153, 371 ,1
-    if(isArmstrong(n)){
-         cout<< "Armstrong" << endl;
-    }
-    else{
-        cout<< "NOT Armstrong" << endl;
-    }
+    // int n=371;   // 153, 371 ,1
+    // if(isArmstrong(n)){
+    //      cout<< "Armstrong" << endl;
+    // }
+    // else{
+    //     cout<< "NOT Armstrong" << endl;
+    // }
+
+    int a=30, b=36 ;
+    cout<<GCD( a ,  b );
     return 0;
 }
