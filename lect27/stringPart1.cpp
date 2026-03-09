@@ -14,10 +14,10 @@ int main(){
     // char str[]= "college";
     // cout<< str[2] << endl;
 
-    // char str[100];
-    // cout << "enter char array :" ;
-    // cin >> str;
-    // cout << str << endl;
+    char str[100];
+    cout << "enter char array :" ;
+    cin >> str;
+    cout << "mera naam "<<str << " hai"<< endl;
 
     // char str[100];
     // cout << "enter char array :" ;
@@ -74,14 +74,14 @@ int main(){
     //   cout<< str;
 
    //check whether string is palindrome  or not
-      string str="racebike";
-      string str1= str;
-      reverse(str.begin() , str.end()); //iterators
-      if(str1==str){
-        cout<< "palindrome";
-      }
-      else{
-        cout << "not palindrome"; 
-      }
-    return 0;
-}
+//       string str="racebike";
+//       string str1= str;
+//       reverse(str.begin() , str.end()); //iterators
+//       if(str1==str){
+//         cout<< "palindrome";
+//       }
+//       else{
+//         cout << "not palindrome"; 
+//       }
+//     return 0;
+ }
