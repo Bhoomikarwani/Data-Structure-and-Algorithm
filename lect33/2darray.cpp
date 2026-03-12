@@ -93,11 +93,26 @@ int maxColSum(int matrix[][3], int rows, int cols)
 
 //   /  -> secondary digonal
 //  /
+int digonalSum(int mat[][3], int n) {//O(n)
+    int sum=0;
+    //pd : j=i
+    //sd : j=n-i-1
+
+    for(int i=0 ; i<n ; i++){
+        sum += mat[i][i];
+
+        if(i != n-i-1){
+            sum += mat[i][n-1-i];
+        }
+    }
+    return sum;
+}
 
 int main(){
     int matrix[3][3] = { { 1,2,3}, {4,5,6} , {7,8,9}};
     int rows =3;
     int cols =3 ;
    // cout<< "maximum row sum : "<< maxRowSum(matrix , rows , cols);
-    cout<< "maximum column sum : "<< maxColSum(matrix , rows , cols);
+   // cout<< "maximum column sum : "<< maxColSum(matrix , rows , cols);
+   cout <<digonalSum(matrix , rows);
 }
