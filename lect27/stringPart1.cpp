@@ -25,13 +25,13 @@ int main(){
     // cout << "output : "<<str << endl;
 
     //print all the characters of string
-    char str[100];
-    cout << "enter char array :" ;
-    cin.getline(str ,100 );
-    for(char ch : str){
-        cout << ch <<" " ;
-    }   
-    cout << endl;
+    // char str[100];
+    // cout << "enter char array :" ;
+    // cin.getline(str ,100 );
+    // for(char ch : str){
+    //     cout << ch <<" " ;
+    // }   
+    // cout << endl;
 
     //calculate length using for loop
     // char str[100]=" apna college";
