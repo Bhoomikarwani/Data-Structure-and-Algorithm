@@ -25,6 +25,7 @@ using namespace std;
 
             while(windIdx< windSize   && idx <s2.length()){
                 windFreq[s2[i]- 'a']++;
+                // idx++;
             }
             if(isFreqSame(freq , windFreq)){  //found
                 return true;
@@ -33,6 +34,7 @@ using namespace std;
         return false;
     }
 int main(){
+
     //permutation in strings
     string s1="ab";
     string s2="eidbaooo";
