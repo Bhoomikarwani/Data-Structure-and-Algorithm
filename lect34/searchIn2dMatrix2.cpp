@@ -2,16 +2,16 @@
 #include <vector>
 using namespace std;
 
-bool searchIn2dMatrix(vector<vector<int>>& matrix, int target){
+bool searchIn2dMatrix(vector<vector<int>>& matrix, int tar){
     int m = matrix.size();
     int n = matrix[0].size();
 
     int r= 0 , c= n-1;
     while(c >= 0 && r<m ){
-        if(target == matrix[r][c]){
+        if(tar == matrix[r][c]){
             return true;
         }
-        else if( target < matrix[r][c]){
+        else if( tar < matrix[r][c]){
             c--;
         }
         else{
@@ -24,5 +24,6 @@ bool searchIn2dMatrix(vector<vector<int>>& matrix, int target){
 int main(){
     vector<vector<int>> matrix={{1,4,7,11,15},{2,5,8,12},{3,6,9,16,22},{10,13,14,17,24},{16,21,23,26,30}};
     int target=100;
+
     cout << searchIn2dMatrix(matrix, target);
 }
