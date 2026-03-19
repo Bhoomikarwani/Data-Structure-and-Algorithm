@@ -1,6 +1,6 @@
 #include <iostream>
 #include <map>
-
+//hashing
 
 using namespace std;
 int main(){
@@ -11,16 +11,16 @@ int main(){
     // m["tablet"]=120;
     // m["watch"]=50;
 
-    // //m.insert({"camera",25});
-    // //m.emplace("camera",25);
+    // m.insert({"camera",25});
+    // m.emplace("camera",25);
 
-    // //cout << m["laptop"] << endl ;
-    // //m.erase("tv");
+    // cout << m["laptop"] << endl ;
+    // m.erase("tv");
 
 
-    // // for(auto val :m ){
-    // //     cout<< val.first << " "<< val.second << endl ;  // give results in ascending order
-    // // }
+    // for(auto val :m ){
+    //     cout<< val.first << " "<< val.second << endl ;  // give results in ascending order
+    // }
 
     // //m.emplace("camera",25);
     // if(m.find("camera") != m.end()){  //last value kai baad wali space
