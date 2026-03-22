@@ -65,4 +65,7 @@ int main(){
      for(int val : vec){
         cout << val << " ";
      }
+
+
+     //optimised approach
 }
