@@ -19,25 +19,22 @@ vector<vector<int>> threeSum(vector<int>& nums){
        while (j < k)
        {
            int sum = nums[i] + nums[j] + nums[k];
-           if (sum < 0)
-           {
+           if (sum < 0){
                j++;
            }
-           else if (sum > 0)
-           {
+           else if (sum > 0){
                k--;
            }
-           else
-           {
+           else{
                ans.push_back({nums[i], nums[j], nums[k]});
                j++;
-               k--;
-               while(j<k && nums[j] == nums[j-1]){
+               //k--;
+               while(j<k && nums[j] == nums[j-1])
                  j++;
                }
            }
        }
-    }
+
    return ans;
 }
 int main(){
