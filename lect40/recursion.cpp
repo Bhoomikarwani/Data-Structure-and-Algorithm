@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 // void printNum(int n){  //recursive function
 //     if(n == 1){
@@ -38,14 +39,28 @@ using namespace std;
 // }
 
 //fibonacci (find (n) th trem of fibonacci series )
-int fib(int n){
+// int fib(int n){
+//     if(n == 0 || n == 1){
+//         return n;
+//     }
+//     return fib(n-1) + fib(n-2);
+// }
+// int main(){
+//     int n = 6;
+//     int val = fib(n);
+//     cout << n <<"th term of fibonacci series is : "<< val;
+// }
+
+//check if array is sorted
+int isSorted(vector<int> arr , int n){  //n= size
     if(n == 0 || n == 1){
-        return n;
+        return true;
     }
-    return fib(n-1) + fib(n-2);
+
+    return arr[n-1] >= arr[n-2]  && isSorted(arr , n-1);
 }
 int main(){
-    int n = 6;
-    int val = fib(n);
-    cout << n <<"th term of fibonacci series is : "<< val;
+    vector<int> arr= {1,8,3,4,5};
+    int n= arr.size();
+    cout<< isSorted(arr,n);
 }
