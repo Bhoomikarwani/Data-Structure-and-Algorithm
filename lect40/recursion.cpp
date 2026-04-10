@@ -52,15 +52,41 @@ using namespace std;
 // }
 
 //check if array is sorted
-int isSorted(vector<int> arr , int n){  //n= size
-    if(n == 0 || n == 1){
-        return true;
-    }
+// int isSorted(vector<int> arr , int n){  //n= size
+//     if(n == 0 || n == 1){
+//         return true;
+//     }
 
-    return arr[n-1] >= arr[n-2]  && isSorted(arr , n-1);
-}
+//     return arr[n-1] >= arr[n-2]  && isSorted(arr , n-1);
+// }
+// int main(){
+//     vector<int> arr= {1,8,3,4,5};
+//     int n= arr.size();
+//     cout<< isSorted(arr,n);
+// }
+
+
+// Binary Search
+int BS(vector<int>& nums, int tar, int st ,int end){ 
+          if(st<= end){
+            int mid= (st + end)/2;
+            if(nums[mid] == tar){
+                return  mid;
+            }
+            else if(tar < nums[mid]){
+                return BS(nums , tar , 0 , mid-1);
+            }
+            else{
+                return BS(nums , tar , mid+1 , end);
+            }
+          }
+          return -1;
+    }
 int main(){
-    vector<int> arr= {1,8,3,4,5};
-    int n= arr.size();
-    cout<< isSorted(arr,n);
-}
+    vector<int> nums = {-1,0,3,5,9,12};
+    int tar = 9 ;
+    int n= nums.size();
+    cout <<  BS(nums , tar , 0 , n-1 );
+    return 0;
+}    
+  
