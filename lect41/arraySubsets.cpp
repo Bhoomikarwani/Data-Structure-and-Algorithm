@@ -28,7 +28,36 @@ using namespace std;
 // }
 
                                            // subsets in power set
-void getAllSubsets(vector<int>& nums , vector<int>& ans , vector<vector<int>>& allSubsets , int i){
+// void getAllSubsets(vector<int>& nums , vector<int>& ans , vector<vector<int>>& allSubsets , int i){
+//      if(i == nums.size()){
+//             allSubsets.push_back({ans});
+//             return;
+//      }
+//      //include
+//      ans.push_back(nums[i]);
+//      getAllSubsets(nums,ans,allSubsets,i+1);
+    
+//      //backtrack
+//      ans.pop_back();
+//      //exclude
+//      getAllSubsets(nums,ans,allSubsets,i+1);
+// }
+    
+// int main(){
+//    vector<int> nums ={1,2,3};
+//    vector<int> ans;
+//    vector<vector<int>> allSubsets ;
+//    getAllSubsets(nums,ans,allSubsets,0);
+//    for(vector<int> val : allSubsets){
+//      for(int i=0 ; i< val.size() ; i++){
+//         cout<< val[i];
+//      }
+//      cout << " ";
+//    }
+//    return 0;
+// }
+                                  // Subsets || (don't print duplicate subsets)
+ void getAllSubsets(vector<int>& nums , vector<int>& ans , vector<vector<int>>& allSubsets , int i){
      if(i == nums.size()){
             allSubsets.push_back({ans});
             return;
@@ -39,12 +68,19 @@ void getAllSubsets(vector<int>& nums , vector<int>& ans , vector<vector<int>>& a
     
      //backtrack
      ans.pop_back();
+     
+     //exclution
+     int idx = i+1;
+     while(idx<nums.size() && nums[idx] == nums[idx-1]){
+      idx++;
+     }
+
      //exclude
-     getAllSubsets(nums,ans,allSubsets,i+1);
+     getAllSubsets(nums,ans,allSubsets,idx);
 }
-    
+
 int main(){
-   vector<int> nums ={1,2,3};
+   vector<int> nums ={1,2,2};
    vector<int> ans;
    vector<vector<int>> allSubsets ;
    getAllSubsets(nums,ans,allSubsets,0);
@@ -56,3 +92,4 @@ int main(){
    }
    return 0;
 }
+                                      
