@@ -17,7 +17,7 @@ int main(){
     // char str[100];
     // cout << "enter char array :" ;
     // cin >> str;
-    // cout << "mera naam "<<str << " hai"<< endl;
+    // cout << "mera naam "<<str << " hai"<< endl;   //=> space kai baad wala nhi lega
 
     // char str[100];
     // cout << "enter char array :" ;
