@@ -17,14 +17,16 @@ using namespace std;
     // cout << invCount ; 
 //}
                                          // optimal approach
+int invCount=0;                
 void merge(vector<int> &arr , int st , int end , int mid){
     vector<int> temp;
     int i=st , j = mid+1;
     
     while(i<=mid && j<=end){
-        if(arr[i] <= arr[j]){
+        if(arr[j] <= arr[i]){
             temp.push_back(arr[i]);
             i++;
+            invCount = mid-i+1;
         }
         else{
             temp.push_back(arr[j]);
@@ -56,7 +58,9 @@ int main(){
     vector<int> arr ={6,3,5,2,7};
     mergeSort(arr , 0 , arr.size()-1);
     for(int val : arr){
+
         cout << val << " ";
+ 
     }
     cout<< endl;
     return 0 ;
