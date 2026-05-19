@@ -16,21 +16,21 @@ using namespace std;
     // }
     // cout << invCount ; 
 //}
-                                         // optimal approach
-int invCount=0;                
-void merge(vector<int> &arr , int st , int end , int mid){
+                                         // optimal approach             
+int merge(vector<int> &arr , int st , int end , int mid){
     vector<int> temp;
     int i=st , j = mid+1;
+    int invCount = 0; 
     
     while(i<=mid && j<=end){
         if(arr[j] <= arr[i]){
             temp.push_back(arr[i]);
             i++;
-            invCount = mid-i+1;
         }
         else{
             temp.push_back(arr[j]);
             j++;
+            invCount += (mid-i +1);
         }
         while(i<=mid){
             temp.push_back(arr[i]);
@@ -45,24 +45,25 @@ void merge(vector<int> &arr , int st , int end , int mid){
            arr[i+st]=temp[i];
         }
     }
+
+    return invCount;
 }
-void mergeSort(vector<int> &arr , int st , int end){
+int mergeSort(vector<int> &arr , int st , int end){
    if(st<end){
       int mid = st+(end-st)/2;
-      mergeSort(arr , st , mid);
-      mergeSort(arr , mid+1 , end);
-      merge(arr , st , end , mid);
+      int leftInvCount = mergeSort(arr , st , mid);
+      int rigthInvCount = mergeSort(arr , mid+1 , end);
+      int invCount =  merge(arr , st , end , mid);
+
+      return leftInvCount + rigthInvCount + invCount;
    }
+   return 0;
 }                                     
 int main(){
-    vector<int> arr ={6,3,5,2,7};
-    mergeSort(arr , 0 , arr.size()-1);
-    for(int val : arr){
-
-        cout << val << " ";
- 
-    }
-    cout<< endl;
+    //vector<int> arr ={6,3,5,2,7};
+    vector<int> arr = {1,3,5,10,2,6,8,9};
+    int count = mergeSort(arr , 0 , arr.size()-1);
+    cout<< "inv count: "<< count << endl;
     return 0 ;
 }      
 
