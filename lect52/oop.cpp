@@ -81,3 +81,11 @@ int main(){
    t2.getinfo();
     return 0;
 }
+
+
+// shallow and deep copy
+// inheritance
+// polymorphism
+// abstraction
+// virtual function
+// sstatic
