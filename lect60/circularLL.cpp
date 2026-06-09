@@ -11,6 +11,7 @@ public:
        next = NULL;
     }
 };
+
 class circularLL{
     Node* head;
     Node* tail;
