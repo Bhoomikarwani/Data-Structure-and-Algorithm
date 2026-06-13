@@ -46,6 +46,7 @@ public:
 
         tail = head;
         head = prev;
+        
     }
     void printLL(){
         Node* temp = head;
