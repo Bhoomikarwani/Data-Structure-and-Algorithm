@@ -33,7 +33,7 @@ public:
     }
      
     int middleOfLL(){
-        //slow fast approach
+      //slow fast approach
        Node* slow = head;
        Node* fast = head;
 
