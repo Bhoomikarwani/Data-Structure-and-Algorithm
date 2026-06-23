@@ -12,9 +12,9 @@ bool isValid(string s) {
                if(st.size() == 0){       // case of only closing bracket in string
                   return false;
                }
-               if((st.top() == '(' && s[i] == '(')  || 
-                   (st.top() == '[' && s[i] == '[')  ||
-                   (st.top() == '{' && s[i] == '{')){
+               if((st.top() == '(' && s[i] == ')')  || 
+                   (st.top() == '[' && s[i] == ']')  ||
+                   (st.top() == '{' && s[i] == '}')){
                        
                        st.pop();
                     }
@@ -23,7 +23,7 @@ bool isValid(string s) {
         return st.size() == 0;
 }
 int main(){
-  string s = "({})";
+  string s = "({}{)";
   cout << isValid(s) << endl;
   return 0;
 }
