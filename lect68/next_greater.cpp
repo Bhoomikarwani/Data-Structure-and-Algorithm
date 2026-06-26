@@ -3,7 +3,7 @@
 #include <stack>
 using namespace std;
 int main(){ 
-    // find the next greater no. for each elementof arr
+    // find the next greater no. for each element of arr
     
     vector<int> arr = {6, 8, 0, 1, 3};
     
