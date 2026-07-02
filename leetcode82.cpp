@@ -3,27 +3,33 @@
 #include <list>
 using namespace std;
 int main(){ 
-    
-    
-    //  if (head == NULL || head->next == NULL) return head;
+    // null cases are very important
 
-    //     ListNode* dummy = NULL // Dummy node to handle head removals
-    //     dummy->next = head;
-    //     ListNode* prev = dummy;
-    //     ListNode* cur = head;
+        // ListNode* curr = head;
+        // ListNode* prev = NULL;
+       
+        // if(head == NULL || head->next == NULL){
+        //     return head;
+        // }
 
-    //     while (cur != NULL && cur->next != NULL) {
-    //         if (cur->val == cur->next->val) {
-    //             // Skip all nodes with the same value
-    //             while (cur->next != NULL && cur->val == cur->next->val) {
-    //                 cur = cur->next;
-    //             }
-    //             prev->next = cur->next; // Remove duplicates
-    //         } else {
-    //             prev = prev->next; // Move to next distinct node
-    //         }
-    //         cur = cur->next;
-    //     }
+        // while(curr != NULL){
 
-    //     return dummy->next;
+        //     if(curr->next != NULL && curr->val == curr->next->val){
+        //          int val = curr->val;
+        //          while(curr != NULL && curr->val == val){         
+        //             curr = curr->next;
+        //          }
+        //          if(prev == NULL){
+        //             head = curr;
+        //          }
+        //          else{
+        //             prev->next = curr;
+        //          }
+        //     }
+        //     else{
+        //         prev = curr;
+        //         curr = curr->next;
+        //     }
+        // }
+        // return head;
 }
