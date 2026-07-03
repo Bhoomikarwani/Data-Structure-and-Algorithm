@@ -69,9 +69,9 @@ int main(){
     // }
 
     //with string
-    //   string str="hello";
-    //   reverse(str.begin() , str.end()); //iterators
-    //   cout<< str;
+      // string str="hello";
+      // reverse(str.begin() , str.end()); //iterators
+      // cout<< str;
 
    //check whether string is palindrome  or not
 //       string str="racebike";
