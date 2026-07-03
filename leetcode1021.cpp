@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 int main(){
+   // remove outer parenthesis
     string str = "((()))(())";
     string ans = "";
     stack<int> s;
