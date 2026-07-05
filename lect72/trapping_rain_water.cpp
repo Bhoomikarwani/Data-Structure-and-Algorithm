@@ -41,7 +41,6 @@ int main(){
             ans += rmax - height[r];
             r--;
         }
-
     }    
     cout << "total water : " << ans<<endl;        
 }
