@@ -24,7 +24,7 @@ int getCelebrity(vector<vector<int>>& arr){
 
     int celeb = s.top();
     for(int i=0 ; i<n ; i++){
-          if((i != celeb) && (arr[i][celeb] == 0 || arr[celeb][i] == 1)){
+          if((i != celeb) && (arr[i][celeb] == 0 || arr[celeb][i] == 1)){   //opposite of correct condition ( arr[i][celeb] = 1 & arr[celeb][i] = 0)
             return -1;
           }
     }
@@ -34,6 +34,6 @@ int getCelebrity(vector<vector<int>>& arr){
 int main(){
      vector<vector<int>> arr = {{0,1,0} , {0,0,0} , {0,1,0}};
      int ans = getCelebrity(arr);
-     cout << "celebbrity is : " << ans << endl;
+     cout << "celebrity is : " << ans << endl;
      return 0; 
 }
