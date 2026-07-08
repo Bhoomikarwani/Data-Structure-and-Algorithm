@@ -15,7 +15,7 @@ int main(){
     // m.emplace("camera",25);
 
     // cout << m["laptop"] << endl ;
-    // m.erase("tv");
+    // m.erase("tv");    // -> deletes key , value pair
 
 
     // for(auto val :m ){
@@ -37,8 +37,12 @@ int main(){
     m.emplace("tv" ,100);
     m.emplace("tv" ,100);
 
-    m.erase(m.find("tv"));
+    for(auto val :m ){
+        cout<< val.first << " "<< val.second << endl ;  // give results in ascending order
+    }
 
+    m.erase(m.find("tv"));   // ek key-value pair ko delete karega 
+    cout << endl ;
     for(auto val :m ){
         cout<< val.first << " "<< val.second << endl ;  // give results in ascending order
     }
