@@ -46,7 +46,7 @@ int main(){
   Queue q;
   q.push(1);
   q.push(2);
-  q.push(3);   // 
+  q.push(3);   
 
   while(!q.empty()){
     cout << q.front() <<" ";  // 1 , 2 , 3
@@ -54,5 +54,4 @@ int main(){
   }
   cout << endl;
   return 0;
-
 }
