@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-
+                                          // Implementation of queue using stack
 class MyQueue {
 public:
     stack<int> s1;
