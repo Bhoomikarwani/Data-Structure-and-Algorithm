@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 int main(){
+
+                                        // in this question we have return the index of starting station for completion of circuit
     vector<int> gas = {5,1,2,3,4};
     vector<int> cost = {4,4,1,5,1};
 
