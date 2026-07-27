@@ -32,5 +32,7 @@ int main(){
 
     Node* root = buildTree(preorder);
     cout << root->data << endl;
+    cout << root->left->data << endl;
+    cout << root->right->right->data << endl;
     return 0;
 }
