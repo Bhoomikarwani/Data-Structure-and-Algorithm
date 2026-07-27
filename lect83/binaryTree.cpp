@@ -38,6 +38,15 @@ void preOrderTraversal(Node* root){
    preOrderTraversal(root->right);
 }
 
+void inOrderTraversal(Node* root){
+   if(root == NULL){
+     return;
+   }
+   inOrderTraversal(root->left);
+   cout << root->data << " ";
+   inOrderTraversal(root->right);
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -47,5 +56,7 @@ int main(){
     cout << root->right->right->data << endl;
 
     preOrderTraversal(root);
+    cout << endl;
+    inOrderTraversal(root);
     return 0;
 }
