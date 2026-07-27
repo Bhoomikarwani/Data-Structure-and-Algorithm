@@ -27,6 +27,17 @@ Node* buildTree(vector<int> preorder){
 
     return root;
 }
+
+void preOrderTraversal(Node* root){
+   if(root == NULL){
+     return;
+   }
+
+   cout << root->data << " ";
+   preOrderTraversal(root->left);
+   preOrderTraversal(root->right);
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -34,5 +45,7 @@ int main(){
     cout << root->data << endl;
     cout << root->left->data << endl;
     cout << root->right->right->data << endl;
+
+    preOrderTraversal(root);
     return 0;
 }
