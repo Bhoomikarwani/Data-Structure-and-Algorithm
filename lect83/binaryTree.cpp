@@ -98,6 +98,17 @@ int height(Node* root){
   return max(leftHeight , rightHeight) + 1 ; 
 }
 
+// count total no. of nodes
+int count(Node* root){
+    if(root == NULL){
+      return 0;
+    }
+    int leftCount = count(root->left);
+    int rightCount = count(root->right);
+
+    return leftCount + rightCount + 1;
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -113,6 +124,7 @@ int main(){
     // postOrder(root);
     // cout << endl ; 
     //levelOrder(root);
-    cout  << height(root);
+    //cout  << height(root);
+    cout << count(root);
     return 0;
 }
