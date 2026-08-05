@@ -14,7 +14,18 @@ bool isPowerOfTwo(int n) {
                                          // optimal approach
       return (n & (n-1)) == 0;                                   
 }
+
+ bool isPowerOfThree(int n) {
+        if(n <= 0 ){
+            return false;
+        }
+        while(n%3 == 0){
+            n = n/3;
+        }
+        return n==1;
+}
 int main(){
     int n = 8;
     cout << isPowerOfTwo(n) << endl;
+    cout << isPowerOfThree(n) << endl;
 }
