@@ -24,8 +24,19 @@ bool isPowerOfTwo(int n) {
         }
         return n==1;
 }
+bool isPowerOfFour(int n) {
+        if(n<=0){
+            return false;
+        }
+        while(n%4 == 0){
+            n = n/4 ;
+        }
+        
+        return n==1;
+}
 int main(){
-    int n = 8;
+    int n = 16;
     cout << isPowerOfTwo(n) << endl;
     cout << isPowerOfThree(n) << endl;
+    cout << isPowerOfFour(n) << endl;
 }
