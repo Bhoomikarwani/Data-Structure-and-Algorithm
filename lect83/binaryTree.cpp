@@ -120,6 +120,18 @@ int sum(Node* root){
   return leftSum + rightSum + root->data;
 }
 
+// check whether the given trees are identical or not
+bool isSameTree(Node* p, Node* q) {
+        if(p == NULL || q == NULL){
+            return p==q;
+        }
+
+        bool isLeftSame = isSameTree(p->left , q->left);
+        bool isRightSame = isSameTree(p->right , q->right);
+
+        return isLeftSame && isRightSame && (p->data == q->data);
+    }
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -137,6 +149,13 @@ int main(){
     //levelOrder(root);
     //cout  << height(root);
     //cout << count(root);
-    cout << sum(root) ; 
+    //cout << sum(root) ; 
+
+    vector<int> p = {1,2,-1,-1,3,-1,-1};
+    vector<int> q = {1,2,-1,-1,3,-1,-1};
+    
+    Node* root1 = buildTree(p);
+    Node* root2 = buildTree(q);
+    cout << isSameTree(root1 , root2) << endl; 
     return 0;
 }
