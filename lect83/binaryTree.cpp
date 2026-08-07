@@ -153,8 +153,9 @@ int main(){
 
     vector<int> p = {1,2,-1,-1,3,-1,-1};
     vector<int> q = {1,2,-1,-1,3,-1,-1};
-    
+    idx = -1;
     Node* root1 = buildTree(p);
+    idx =-1;
     Node* root2 = buildTree(q);
     cout << isSameTree(root1 , root2) << endl; 
     return 0;
