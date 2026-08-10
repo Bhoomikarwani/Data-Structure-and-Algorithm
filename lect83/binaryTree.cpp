@@ -132,6 +132,19 @@ bool isSameTree(Node* p, Node* q) {
         return isLeftSame && isRightSame && (p->data == q->data);
     }
 
+// check if the given tree is a subtree of main tree or not
+bool isSubtree(Node* root, Node* subroot){
+     if(root == NULL || subroot == NULL){
+            return root == subroot;
+    }
+    //search subroot in main tree
+    if(root->data == subroot->data){
+       return  isSameTree(root , subroot);
+    }
+    isSubtree(root->left , subroot);
+    isSubtree(root->right , subroot);
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -151,12 +164,14 @@ int main(){
     //cout << count(root);
     //cout << sum(root) ; 
 
-    vector<int> p = {1,2,-1,-1,3,-1,-1};
-    vector<int> q = {1,2,-1,-1,3,-1,-1};
-    idx = -1;
-    Node* root1 = buildTree(p);
-    idx =-1;
-    Node* root2 = buildTree(q);
-    cout << isSameTree(root1 , root2) << endl; 
+    // vector<int> p = {1,2,-1,-1,3,-1,-1};
+    // vector<int> q = {1,2,-1,-1,3,-1,-1};
+    // idx = -1;
+    // Node* root1 = buildTree(p);
+    // idx =-1;
+    // Node* root2 = buildTree(q);
+    // cout << isSameTree(root1 , root2) << endl; 
+
+
     return 0;
 }
