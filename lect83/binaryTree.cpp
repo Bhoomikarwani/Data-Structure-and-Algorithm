@@ -138,11 +138,10 @@ bool isSubtree(Node* root, Node* subroot){
             return root == subroot;
     }
     //search subroot in main tree
-    if(root->data == subroot->data){
-       return  isSameTree(root , subroot);
+    if(root->data == subroot->data && isSameTree(root , subroot)){
+       return true;
     }
-    return isSubtree(root->left , subroot) ||
-            isSubtree(root->right , subroot);
+    return isSubtree(root->left , subroot) || isSubtree(root->right , subroot);
 }
 
 int main(){
@@ -172,8 +171,8 @@ int main(){
     // Node* root2 = buildTree(q);
     // cout << isSameTree(root1 , root2) << endl; 
 
-    vector<int> p = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
-    vector<int> q = {3,5,-1,-1,5,-1,-1};
+    vector<int> p = {1,1,-1,-1,-1};
+    vector<int> q = {1,-1,-1};
     idx = -1;
     Node* root1 = buildTree(p);
     idx =-1;
