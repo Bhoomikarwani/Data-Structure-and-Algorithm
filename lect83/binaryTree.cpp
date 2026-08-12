@@ -144,6 +144,20 @@ bool isSubtree(Node* root, Node* subroot){
     return isSubtree(root->left , subroot) || isSubtree(root->right , subroot);
 }
 
+
+//diameter of binary tree
+int diameter(Node* root){
+    if(root == NULL){
+        return 0;
+    }
+    int leftDiameter = diameter(root->left);
+    int rightDiameter = diameter(root->right); 
+
+    int currDia = height(root->left) + height(root->right);
+
+    return max(leftDiameter , rightDiameter , currDia);
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -171,12 +185,17 @@ int main(){
     // Node* root2 = buildTree(q);
     // cout << isSameTree(root1 , root2) << endl; 
 
-    vector<int> p = {1,1,-1,-1,-1};
-    vector<int> q = {1,-1,-1};
+    // vector<int> p = {1,1,-1,-1,-1};
+    // vector<int> q = {1,-1,-1};
+    // idx = -1;
+    // Node* root1 = buildTree(p);
+    // idx =-1;
+    // Node* root2 = buildTree(q);
+    // cout << isSubtree(root1 , root2) << endl;
+
+    vector<int> p = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     idx = -1;
     Node* root1 = buildTree(p);
-    idx =-1;
-    Node* root2 = buildTree(q);
-    cout << isSubtree(root1 , root2) << endl;
+    cout << diameter(root1) << endl; 
     return 0;
 }
