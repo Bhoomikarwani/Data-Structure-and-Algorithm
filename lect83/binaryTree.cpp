@@ -158,6 +158,20 @@ int diameter(Node* root){
     return max(leftDiameter , rightDiameter , currDia);
 }
 
+
+// optimized approach to find diameter of binary tree
+int curr_diameter = 0;
+int dia(Node* root){
+    if(root == NULL){
+        return 0;
+    }
+    int left_height = height(root->left);
+    int right_height = height(root->right);
+
+     curr_diameter = max( left_height + right_height , curr_diameter);
+    return max(left_height , right_height) + 1;
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -196,6 +210,8 @@ int main(){
     vector<int> p = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     idx = -1;
     Node* root1 = buildTree(p);
-    cout << diameter(root1) << endl; 
+    //cout << diameter(root1) << endl; 
+    dia(root1) ;
+    cout << curr_diameter ;
     return 0;
 }
