@@ -57,10 +57,42 @@ void topView(Node* root){
         cout << it.second << " ";
     }
 }
+ 
 
+                                            // bottom view
+void bottomView(Node* root) {
+    if (root == NULL) return;
+
+    // level order traversal and horizontal distance (HD)
+    queue<pair<Node*, int>> q; // Node and HD
+    q.push({root, 0});
+    map<int, int> m;           // <HD, node val>
+
+    while (!q.empty()) {
+        Node* curr = q.front().first;
+        int currHD = q.front().second;
+        q.pop();
+
+        // Always overwrite so the bottom-most node at this HD is retained
+        m[currHD] = curr->data;
+
+        if (curr->left != NULL) {
+            q.push({curr->left, currHD - 1});
+        }
+        if (curr->right != NULL) {
+            q.push({curr->right, currHD + 1});
+        }
+    }
+
+    for (auto it : m) {
+        cout << it.second << " ";
+    }
+}                                            
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
     Node* root = buildTree(preorder);
     topView(root);
+    cout<< endl;
+    bottomView(root);
 }
