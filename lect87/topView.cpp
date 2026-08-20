@@ -68,7 +68,7 @@ void bottomView(Node* root) {
     q.push({root, 0});
     map<int, int> m;           // <HD, node val>
 
-    while (!q.empty()) {
+    while (q.size() > 0 ) {
         Node* curr = q.front().first;
         int currHD = q.front().second;
         q.pop();
