@@ -88,6 +88,37 @@ void bottomView(Node* root) {
         cout << it.second << " ";
     }
 }                                            
+
+                                                       // right view
+void rightView(Node* root){
+    
+    queue<Node*> q;  
+    q.push(root);
+    q.push(NULL);
+   
+    while(q.size() > 0){
+        Node* curr = q.front();
+        q.pop();
+
+        if(curr == NULL){
+               if(!q.empty()){
+                  q.push(NULL);
+               }
+               continue;
+        }
+
+        if(curr->left != NULL){
+            q.push(curr->left );
+        }
+        if(curr->right != NULL){
+            q.push(curr->right);
+        }
+        if(q.front() == NULL){
+            cout << curr->data << " ";
+        }
+    }
+}                                                       
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
@@ -95,4 +126,6 @@ int main(){
     topView(root);
     cout<< endl;
     bottomView(root);
+    cout << endl;
+    rightView(root);
 }
