@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+                        // Biuld tree from preorder and inorder sequence
 class Node{
 public:
     int data;
