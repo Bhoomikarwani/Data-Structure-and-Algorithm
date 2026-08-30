@@ -35,17 +35,17 @@ int maxWidth(Node* root){
      int max_width = 0 ;
      while(q.size() > 0){
         int currSize = q.size();
-        int stIdx = q.front().second ; 
-        int endIdx = q.back().second;
-        max_width = max(max_width , (endIdx - stIdx)+1 );
+        unsigned long long stIdx = q.front().second ; 
+        unsigned long long endIdx = q.back().second;
+        max_width = max(max_width , (int)(endIdx - stIdx+1) );
         for(int i=0 ; i<currSize ; i++){
-                Node* curr = q.front().first;
+                auto curr = q.front();
                 q.pop();
-                if(curr->left != NULL){
-                    q.push({curr->left , 2*i+1});
+                if(curr.first->left != NULL){
+                    q.push({curr.first->left , curr.second*2+1});
                 }
-                if(curr->right != NULL){
-                    q.push({curr->right , 2*i+2});
+                if(curr.first->right != NULL){
+                    q.push({curr.first->right , curr.second*2+2});
                 }
         }
      }
