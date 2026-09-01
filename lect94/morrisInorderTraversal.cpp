@@ -30,12 +30,6 @@ Node* buildTree(vector<int> preorder){
     return root;
 } 
 void helper(Node* root , vector<int>& ans){
-        // if(root == NULL){                |
-        //     return;                      | 
-        // }                                |
-        // helper(root->left , ans);        |---> recursive approach
-        // ans.push_back(root->val);        | 
-        // helper(root->right , ans);       |
 
                               // itreative approach
         if(root == NULL){                
