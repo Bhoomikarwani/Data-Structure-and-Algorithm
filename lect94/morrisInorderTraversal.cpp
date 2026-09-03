@@ -2,7 +2,7 @@
 #include <vector>
 #include <queue>
 using namespace std;
-                        //  maximum width of tree
+                        //        iterative approach for inorder traversal  
 class Node{
 public:
     int data;
