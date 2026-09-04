@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+                //Given an integer n, return true if n has exactly three positive divisors. Otherwise, return false
 
 bool isThree(int n) {
         int check = 0;
