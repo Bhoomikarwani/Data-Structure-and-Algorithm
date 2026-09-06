@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <queue>
+
 using namespace std;
-                        //        iterative approach for inorder traversal  
+                           //  Path Sum
 class Node{
 public:
     int data;
