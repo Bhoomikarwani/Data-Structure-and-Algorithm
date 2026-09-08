@@ -26,6 +26,22 @@ Node* insert(Node* root , int val){
     return root;
 }
 
+bool search(Node* root ,int key){  // O(log n)
+   if(root == NULL){
+    return false;
+   }
+
+   if(root->data == key){
+      return true;
+   }
+   if(key < root->data){
+      return search(root->left , key);
+   }
+   else{
+      return search(root->right , key);
+   }
+}
+
 Node* buildBST(vector<int> arr){
     Node* root = NULL;
 
@@ -47,5 +63,9 @@ int main(){
     vector<int> arr = {3, 2,1 ,5,6,4};
     Node* root = buildBST(arr);
     inorder(root);      // -> if sorted sequence mil rha hai means BST successfully create ho chuka hai
+
+    cout << endl;
+    cout << search(root , 8);
+
     return 0; 
 }
