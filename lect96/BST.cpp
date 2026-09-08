@@ -42,6 +42,44 @@ bool search(Node* root ,int key){  // O(log n)
    }
 }
 
+Node* getIS(Node* root){   // left most node in right subtree
+    while(root != NULL && root->left != NULL){
+        root = root->left;
+    }
+    return root;
+}
+
+Node* delNode(Node* root , int key){  // key => value to delete
+    if(root == NULL){
+        return NULL;
+    }
+
+    if(key < root->data){
+        root->left = delNode(root->left , key);
+    }
+    else if(key > root->data){
+        root->right = delNode(root->right , key);
+    }
+    else{ // root->data == key (delete)
+        if(root->left == NULL){
+            Node* temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if(root->right == NULL){
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        }
+        else{  // 2 children
+            Node* IS = getIS(root->right); // IS = inorder successor
+            root->data = IS->data;
+            root->right = delNode(root->right , IS->data);
+        }
+    }
+    return root;
+}
+
 Node* buildBST(vector<int> arr){
     Node* root = NULL;
 
@@ -62,10 +100,17 @@ void inorder(Node* root ){
 int main(){
     vector<int> arr = {3, 2,1 ,5,6,4};
     Node* root = buildBST(arr);
+    
+    cout << "before" ;
     inorder(root);      // -> if sorted sequence mil rha hai means BST successfully create ho chuka hai
 
     cout << endl;
-    cout << search(root , 8);
+    //cout << search(root , 8);
+    //delNode(root , 6);
+    //delNode(root , 5);
+    delNode(root , 3);
+    cout << "after";
+    inorder(root);
 
     return 0; 
 }
