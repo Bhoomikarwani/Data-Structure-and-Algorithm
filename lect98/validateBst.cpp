@@ -30,30 +30,51 @@ Node* buildTree(vector<int> preorder){
 } 
                                            // Brute force approach
                     // first find inorder sequenece then check whether it is in increasing order or not   
-void inorder(Node* root , vector<int>& ans){
-    if(root == NULL) return;
+// void inorder(Node* root , vector<int>& ans){
+//     if(root == NULL) return;
 
-    inorder(root->left, ans);
-    ans.push_back(root->data);
-    inorder(root->right , ans);
-}
+//     inorder(root->left, ans);
+//     ans.push_back(root->data);
+//     inorder(root->right , ans);
+// }
 
-bool isValidBST(Node* root) {
-   vector<int> ans;
-   inorder(root , ans);
+// bool isValidBST(Node* root) {
+//    vector<int> ans;
+//    inorder(root , ans);
    
-   if(ans.empty()) return true;
+//    if(ans.empty()) return true;
 
-   for(int i=0 ; i < ans.size()-1 ; i++){
-      if(ans[i]>= ans[i+1]){
-         return false;
-      }
-   }
-   return true;
-}
+//    for(int i=0 ; i < ans.size()-1 ; i++){
+//       if(ans[i]>= ans[i+1]){
+//          return false;
+//       }
+//    }
+//    return true;
+// }
+
+
+                                                 // optimized approach
+                            // checks that current root is in range of min & max or not if not then it returns false
+bool helper(Node* root , Node* min , Node* max){
+        if(root == NULL) return true;
+
+        if(min != NULL && root->data <= min->data){
+            return false;
+        }
+        if(max != NULL && root->data >= max->data){
+            return false;
+        }
+
+        return helper(root->left , min , root) && 
+               helper(root->right , root , max);
+}                               
+bool isValidBST(Node* root) {
+        return helper(root , NULL ,NULL);
+}                                                           
+
 
 int main(){
-    vector<int> preorder = {5,1,-1,-1,4,3,-1,-1,6,-1,-1};
+    vector<int> preorder = {5,1,-1,-1,7,6,-1,-1,8,-1,-1};
     Node* root = buildTree(preorder);
     cout << isValidBST(root);
     return  0 ;
