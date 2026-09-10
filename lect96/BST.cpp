@@ -26,6 +26,15 @@ Node* insert(Node* root , int val){
     return root;
 }
 
+Node* buildBST(vector<int> arr){
+    Node* root = NULL;
+
+    for(int val : arr){
+        root = insert(root , val);
+    }
+    return root;
+}
+
 bool search(Node* root ,int key){  // O(log n)
    if(root == NULL){
     return false;
@@ -80,14 +89,6 @@ Node* delNode(Node* root , int key){  // key => value to delete
     return root;
 }
 
-Node* buildBST(vector<int> arr){
-    Node* root = NULL;
-
-    for(int val : arr){
-        root = insert(root , val);
-    }
-    return root;
-}
 
 void inorder(Node* root ){
     if(root == NULL) return ;
