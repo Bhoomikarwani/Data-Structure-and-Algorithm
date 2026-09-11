@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-                                               // minimum difference btw any 2 nodes
+                                               // Lowest common acestor in BST
 class Node{
   public:
     int data;
