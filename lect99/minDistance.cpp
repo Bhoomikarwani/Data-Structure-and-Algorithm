@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+                                               // minimum difference btw any 2 nodes
 class Node{
   public:
     int data;
