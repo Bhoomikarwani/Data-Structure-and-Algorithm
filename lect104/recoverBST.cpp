@@ -30,6 +30,8 @@ Node* buildTree(vector<int> preorder){
     return root;
 }
 
+
+                                                // recursive approach
 void inorderSequence(Node* root){
    if(root == NULL){
      return;
@@ -39,35 +41,83 @@ void inorderSequence(Node* root){
    inorderSequence(root->right);
 }
 
-Node* prevNode = NULL;
-Node* first = NULL;
-Node* second = NULL;
-void inorderPath(Node *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-    inorderPath(root->left);
-    if (prevNode != NULL && root->data < prevNode->data)
-    {
-        if (!first)
-        {
-            first = prevNode;
-        }
-        second = root;
-    }
-    prevNode = root;
-    inorderPath(root->right);
-}
+// Node* prevNode = NULL;
+// Node* first = NULL;
+// Node* second = NULL;
+// void inorderPath(Node *root)
+// {
+//     if (root == NULL)
+//     {
+//         return;
+//     }
+//     inorderPath(root->left);
+//     if (prevNode != NULL && root->data < prevNode->data)
+//     {
+//         if (!first)
+//         {
+//             first = prevNode;
+//         }
+//         second = root;
+//     }
+//     prevNode = root;
+//     inorderPath(root->right);
+// }
+                                            
+// void recoverTree(Node *root)  // TC : O(N) &  
+// {                              //SC: O(N)  because of recusive calls
+//     inorderPath(root);
+//     int temp = first->data;
+//     first->data = second->data;
+//     second->data = temp;
+// }
+                                                  
+                                                 // iterative approach
+void recoverTree(Node *root) {
+     Node* prevNode = NULL;
+     Node* first = NULL;
+     Node* second = NULL;
 
-void recoverTree(Node *root)  // TC : O(N) &  
-{                              //SC: O(N)  because of recusive calls
-    inorderPath(root);
-    int temp = first->data;
-    first->data = second->data;
-    second->data = temp;
-}
+     while(root != NULL){
+        if(root->left == NULL){
+            if(prevNode != NULL && prevNode->data > root->data){
+                  if(!first){
+                    first = prevNode;
+                  }
+                  second = root; 
+            }
+            prevNode =root;
+            root = root->right;
+        }
+        else{
+            // find prev ip
+            Node* IP = root->left;
+            while(IP->right != NULL && IP->right != root){
+                IP = IP->right;
+            }
+            if(IP->right == NULL){
+                IP->right = root;
+                root = root->left;
+            }
+            else{
+                if(prevNode != NULL && prevNode->data > root->data){
+                     if(!first){
+                       first = prevNode;
+                     }
+                     second = root; 
+                }
+                prevNode = root;
+                IP->right = NULL;
+                root = root->right;
+            }
+        }
+     }
+
+     if(first != NULL && second != NULL){
+        int temp = first->data;
+        first->data = second->data;
+        second->data = temp;
+     }
+}                                                 
 
 int main(){
 
@@ -79,6 +129,7 @@ int main(){
     cout << endl;
 
     recoverTree(root);      
+
 
     cout << "after :" ;
     inorderSequence(root); 
