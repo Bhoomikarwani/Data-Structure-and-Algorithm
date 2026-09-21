@@ -19,16 +19,31 @@ public:
       l[v].push_back(u);
     }
 
-    void bfs(){
-         queue<int> q;
-         vector<bool> visited(V, false);
+    void bfs()
+    {
+        queue<int> q;
+        vector<bool> visited(V, false);
 
-         q.push(0);
-         visited[0] = true;
+        q.push(0);
+        visited[0] = true;
 
-         while(q.size() > 0){
-            int u = q
-         }
+        while (q.size() > 0)
+        {
+            int u = q.front();
+            q.pop();
+
+            cout << u << " ";
+
+            for (int v : l[u])
+            {
+                if (visited[v] == false)
+                {
+                    visited[v] = true;
+                    q.push(v);
+                }
+            }
+        }
+        cout << endl ;
     }
 };
 
