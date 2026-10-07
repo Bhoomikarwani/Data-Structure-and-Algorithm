@@ -3,7 +3,7 @@
 #include <list>
 
 using namespace std;
-
+                      // Shortest from src to all vertices for weighted graph with negative weight
 class Edge{
 public:
    int v;
@@ -52,8 +52,6 @@ int main(){
 
     g[3].push_back(Edge(4,4));
    
-   
-
     bellmanFord(0 , g , V);
 
     return 0;
