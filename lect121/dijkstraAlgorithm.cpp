@@ -16,7 +16,8 @@ public:
    }
 };
 
-void dijkstra(int src , vector<vector<Edge>> g , int V){
+void dijkstra(int src , vector<vector<Edge>> g , int V){   // bfs  TC : (V+E log n)
+
    vector<int> dist(V , INT16_MAX);
    dist[src] = 0;
 
