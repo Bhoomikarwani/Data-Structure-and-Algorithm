@@ -46,11 +46,13 @@ int main(){
     g[0].push_back(Edge(2,4));
 
     g[1].push_back(Edge(2,-4));
-    g[1].push_back(Edge(4,-1));
+    
 
     g[2].push_back(Edge(3,2));
 
     g[3].push_back(Edge(4,4));
+
+    g[4].push_back(Edge(1,-1));
    
     bellmanFord(0 , g , V);
 
