@@ -30,13 +30,13 @@ public:
         for(int i=0 ; i<adj[u].size() ; i++){
             int v = adj[u][i];
 
-            if(dt[u] == -1){
+            if(dt[v] == -1){
                 children++;
                 dfs(v, u , cp);
                 //update low
                 low[u] = min(low[u], low[v]);
 
-                if(parU != -1  &&  low[v] >= dt[u]){
+                if(parU != -1  &&  low[v] >= dt[u]){    // not for root node
                         cp.insert(u);
                 }
             }
@@ -46,7 +46,7 @@ public:
             }
         }
 
-        if(parU == -1 && children >1){
+        if(parU == -1 && children >1){   // root node
             cp.insert(u);
         }
     }
@@ -65,6 +65,7 @@ public:
         }
 
         // print the critical points
+        cout << "articulation points : " ;
         for(auto val : criticalPoints){
             cout << val << " ";
         }
